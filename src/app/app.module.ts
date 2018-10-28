@@ -2,14 +2,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { StoreModule } from '@ngrx/store';
-import { StoreRouterConnectingModule } from '@ngrx/router-store';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { StoreModule } from '@ngrx/root-store';
+import { StoreRouterConnectingModule } from '@ngrx/router-root-store';
+import { StoreDevtoolsModule } from '@ngrx/root-store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import { environment } from '../environments/environment';
 import { metaReducers, reducers } from './app.reducers';
 import { CarsModule } from './cars/cars.module';
 import { RouterModule } from '@angular/router';
+import { AppEffects } from './root-store/app.effects';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { RouterModule } from '@angular/router';
       name: 'NgRx Tricity',
       logOnly: environment.production,
     }),
-    EffectsModule.forRoot([]),
+    EffectsModule.forRoot([AppEffects]),
   ],
   providers: [],
   bootstrap: [AppComponent]

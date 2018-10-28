@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { State } from './store/cars.reducer';
-import { select, Store } from '@ngrx/store';
+import { select, Store } from '@ngrx/root-store';
 import { Observable } from 'rxjs';
 import { Car } from './car.model';
 import { FetchCars } from './store/cars.actions';
@@ -12,7 +12,6 @@ import * as fromCars from './store/cars.selectors';
   styleUrls: ['./cars.component.css']
 })
 export class CarsComponent implements OnInit {
-  id: number;
   cars$: Observable<Car[]> = this.store.pipe(select(fromCars.getCars));
   car$: Observable<Car> = this.store.pipe(select(fromCars.getCar(5)));
   carDynamic$: Observable<(id: number) => Car> = this.store.pipe(select(fromCars.getCarDynamic));

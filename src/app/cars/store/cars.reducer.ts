@@ -1,6 +1,6 @@
 import { CarsActionsUnion, CarsActionTypes } from './cars.actions';
 import { Car } from '../car.model';
-import { ActionReducerMap } from '@ngrx/store';
+import { ActionReducerMap } from '@ngrx/root-store';
 
 export interface State {
   allCars: Car[];

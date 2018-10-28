@@ -1,4 +1,4 @@
-import { Action } from '@ngrx/store';
+import { Action } from '@ngrx/root-store';
 import { Car } from '../car.model';
 
 export enum CarsActionTypes {

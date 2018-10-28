@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CarsComponent } from './cars.component';
-import { StoreModule } from '@ngrx/store';
+import { StoreModule } from '@ngrx/root-store';
 import { EffectsModule } from '@ngrx/effects';
 import { CarsEffects } from './store/cars.effects';
 import { reducers } from './store/cars.reducer';

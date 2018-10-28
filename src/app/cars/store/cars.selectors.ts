@@ -1,4 +1,4 @@
-import { createFeatureSelector, createSelector } from '@ngrx/store';
+import { createFeatureSelector, createSelector } from '@ngrx/root-store';
 import { CarsState } from './cars.reducer';
 import { Car } from '../car.model';
 
