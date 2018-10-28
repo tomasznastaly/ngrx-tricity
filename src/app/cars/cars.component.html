@@ -1,0 +1,13 @@
+<button (click)="fetchCars()">Fetch cars</button>
+<button (click)="fetchCars()">Fetch cars</button>
+<button (click)="fetchCars()">Fetch cars</button>
+
+{{ cars$ | async | json }}
+
+
+<!--{{ car$ | async | json }}-->
+
+<div *ngFor="let x of [1,5,10]">
+HEHE{{ (carDynamic$ | async)(x) | json }}
+</div>
+
