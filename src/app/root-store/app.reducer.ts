@@ -1,5 +1,4 @@
-import {ActionReducerMap} from '@ngrx/root-store';
-import {AppActionsUnion, AppActionTypes} from './app.actions';
+import { AppActionsUnion, AppActionTypes } from './app.actions';
 
 export interface State {
   isOnline: boolean;

@@ -1,13 +1,17 @@
-<button (click)="fetchCars()">Fetch cars</button>
-<button (click)="fetchCars()">Fetch cars</button>
-<button (click)="fetchCars()">Fetch cars</button>
+<div>
+  <button (click)="fetchCars()">Fetch cars</button>
+</div>
 
-{{ cars$ | async | json }}
+<p>CARS</p>
+<ul>
+  <li *ngFor="let car of cars$ | async" [routerLink]="car.id">{{ car.model }}</li>
+</ul>
 
+<p>CAR BY ID</p>
+<div>CAR WITH ID "5": {{ car$ | async | json }}</div>
 
-<!--{{ car$ | async | json }}-->
-
-<div *ngFor="let x of [1,5,10]">
-HEHE{{ (carDynamic$ | async)(x) | json }}
+<p>CAR BY DYNAMIC ID</p>
+<div *ngFor="let carId of [5, 10]">
+CAR WITH ID {{carId}}: {{ (carDynamic$ | async)(carId) | json }}
 </div>
 

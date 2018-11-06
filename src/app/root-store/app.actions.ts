@@ -1,4 +1,4 @@
-import { Action } from '@ngrx/root-store';
+import { Action } from '@ngrx/store';
 
 export enum AppActionTypes {
   CHANGE_ONLINE_STATUS = '[App] Online Status',
@@ -10,5 +10,4 @@ export class ChangeOnlineStatus implements Action {
   constructor(public payload: {online: boolean}) {}
 }
 
-export type AppActionsUnion =
-  | ChangeOnlineStatus;
+export type AppActionsUnion = | ChangeOnlineStatus;

@@ -1,21 +1,20 @@
 import { CarsActionsUnion, CarsActionTypes } from './cars.actions';
 import { Car } from '../car.model';
-import { ActionReducerMap } from '@ngrx/root-store';
 
 export interface State {
-  allCars: Car[];
+  carsList: Car[];
 }
 
 export const initialState: State = {
-  allCars: [],
+  carsList: [],
 };
 
-export function reducer(state = initialState, action: CarsActionsUnion): State {
+export function carsReducer(state = initialState, action: CarsActionsUnion): State {
   switch (action.type) {
     case CarsActionTypes.STORE_CARS:
       return {
         ...state,
-        allCars: action.payload,
+        carsList: action.payload.carsList,
       };
 
     default: {
@@ -23,11 +22,3 @@ export function reducer(state = initialState, action: CarsActionsUnion): State {
     }
   }
 }
-
-export interface CarsState {
-  carsXX: State;
-}
-
-export const reducers: ActionReducerMap<CarsState, CarsActionsUnion> = {
-  carsXX: reducer,
-};

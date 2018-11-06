@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
-import { select, Store } from '@ngrx/root-store';
+import { select, Store } from '@ngrx/store';
 import * as fromApp from './root-store/app.selectors';
-import {State} from './cars/store/cars.reducer';
-
+import { State } from './app.reducers';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +9,7 @@ import {State} from './cars/store/cars.reducer';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  isOnline$: Observable<boolean> = this.store.pipe(select(fromApp.getOnlineStatus));
+  isOnline$ = this.store.pipe(select(fromApp.getOnlineStatus));
 
-  constructor(private store: Store<State>) { }
+  constructor(private store: Store<State>) {}
 }
